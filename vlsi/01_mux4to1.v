@@ -1,4 +1,11 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : mux4to1
+// Project     : Practical 1: 4:1 Multiplexer
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Practical 1: 4:1 Multiplexer
 // y = i[s]  (s = 00 -> i0, 01 -> i1, 10 -> i2, 11 -> i3)
 module mux4to1 (

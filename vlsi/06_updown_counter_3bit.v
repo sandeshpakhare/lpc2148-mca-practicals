@@ -1,4 +1,11 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : updown_counter
+// Project     : Practical 6: 3-bit synchronous up/down counter
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Practical 6: 3-bit synchronous up/down counter
 // up_down = 1 -> count up 0..7,  up_down = 0 -> count down 7..0
 module updown_counter (

@@ -1,5 +1,12 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : full_adder_tb
+// Project     : Testbench: Full adder using two half adders (all 8 combinations)
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Testbench: Full adder using two half adders (all 8 combinations)
-`timescale 1ns/1ps
 module full_adder_tb;
     reg  a, b, cin;
     wire sum, cout;
@@ -8,8 +15,6 @@ module full_adder_tb;
     full_adder uut (.a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
 
     initial begin
-        $dumpfile("full_adder.vcd");
-        $dumpvars(0, full_adder_tb);
         $display(" a b cin | sum cout");
         for (k = 0; k < 8; k = k + 1) begin
             {a, b, cin} = k;

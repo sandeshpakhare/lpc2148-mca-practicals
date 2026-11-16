@@ -1,5 +1,12 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : alu_4bit_tb
+// Project     : Testbench: 4-bit ALU
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Testbench: 4-bit ALU
-`timescale 1ns/1ps
 module alu_4bit_tb;
     reg  [3:0] a, b;
     reg  [2:0] sel;
@@ -10,8 +17,6 @@ module alu_4bit_tb;
     alu_4bit uut (.a(a), .b(b), .sel(sel), .y(y), .cout(cout));
 
     initial begin
-        $dumpfile("alu_4bit.vcd");
-        $dumpvars(0, alu_4bit_tb);
         a = 4'b1011;   // 11
         b = 4'b0110;   // 6
         for (k = 0; k < 8; k = k + 1) begin

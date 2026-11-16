@@ -1,4 +1,11 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : full_adder (uses half_adder)
+// Project     : Practical 2: Full adder using two half adders
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Practical 2: Full adder using two half adders
 // sum = a ^ b ^ cin,  cout = a&b | cin&(a^b)
 

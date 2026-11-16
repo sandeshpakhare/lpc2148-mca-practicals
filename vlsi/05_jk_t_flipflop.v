@@ -1,4 +1,11 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : jk_ff, t_ff
+// Project     : Practical 5: JK flip-flop and T flip-flop (positive edge, synchronous reset)
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Practical 5: JK flip-flop and T flip-flop (positive edge, synchronous reset)
 
 // JK: 00 hold, 01 reset, 10 set, 11 toggle

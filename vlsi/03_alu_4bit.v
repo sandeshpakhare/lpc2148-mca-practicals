@@ -1,4 +1,11 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : alu_4bit
+// Project     : Practical 3: 4-bit ALU
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Practical 3: 4-bit ALU
 // sel | operation
 // 000 | a + b   (cout = carry)

@@ -1,5 +1,12 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : siso_tb
+// Project     : Testbench: 4-bit SISO shift register (shifts in 1011)
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Testbench: 4-bit SISO shift register (shifts in 1011)
-`timescale 1ns/1ps
 module siso_tb;
     reg  clk, rst, sin;
     wire sout;
@@ -9,8 +16,6 @@ module siso_tb;
     always #5 clk = ~clk;          // 10 ns clock
 
     initial begin
-        $dumpfile("siso.vcd");
-        $dumpvars(0, siso_tb);
         $monitor("t=%0t rst=%b sin=%b q=%b sout=%b", $time, rst, sin, uut.q, sout);
 
         clk = 0; rst = 1; sin = 0;

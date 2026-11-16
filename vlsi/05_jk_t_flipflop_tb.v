@@ -1,5 +1,12 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : jk_t_ff_tb
+// Project     : Testbench: JK flip-flop and T flip-flop
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Testbench: JK flip-flop and T flip-flop
-`timescale 1ns/1ps
 module jk_t_ff_tb;
     reg  clk, rst, j, k, t;
     wire q_jk, qbar_jk, q_t, qbar_t;
@@ -10,8 +17,6 @@ module jk_t_ff_tb;
     always #5 clk = ~clk;          // 10 ns clock
 
     initial begin
-        $dumpfile("jk_t_ff.vcd");
-        $dumpvars(0, jk_t_ff_tb);
         $monitor("t=%0t rst=%b | J=%b K=%b Q=%b | T=%b Q=%b", $time, rst, j, k, q_jk, t, q_t);
 
         clk = 0; rst = 1; j = 0; k = 0; t = 0;

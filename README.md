@@ -14,7 +14,16 @@ Each practical has a design file and a `_tb.v` testbench. All were simulated and
 | 6. 3-bit sync up/down counter | `06_updown_counter_3bit.v` | `06_updown_counter_3bit_tb.v` |
 | 7. SISO shift register | `07_siso_shift_register.v` | `07_siso_shift_register_tb.v` |
 
-In Vivado / ISE / ModelSim: add the design file as a design source and the `_tb.v` file as a simulation source, set the testbench as top, then run behavioral simulation.
+### Running in Vivado
+
+1. **Create Project** > Next > name it (e.g. `alu_4bit`) > **RTL Project** (tick "Do not specify sources at this time") > choose any part (e.g. xc7a35tcpg236-1 / Basys3) > Finish.
+2. **Add Sources** > *Add or create design sources* > **Create File** > Verilog, name it like the module (e.g. `alu_4bit`) > Finish. When the "Define Module" box opens, just click OK (and Yes). Open the file, delete everything, paste the design code, save (Ctrl+S).
+3. **Add Sources** > *Add or create simulation sources* > **Create File** > name it `alu_4bit_tb` > Finish > OK/Yes. Paste the testbench code, save.
+4. In the Sources panel under *Simulation Sources*, right-click the `_tb` file > **Set as Top** (Vivado usually does this automatically).
+5. Flow Navigator > **Run Simulation** > **Run Behavioral Simulation**.
+6. In the waveform window click **Zoom Fit**. The `$display` / `$monitor` text table appears in the **Tcl Console** at the bottom — copy it into your journal as the result.
+
+Tips: every simulation ends with `$finish`, so all waveforms are visible after the run. To see internal signals (like `q` in the SISO register), drag them from the Scope/Objects panel into the waveform and click **Relaunch Simulation**. File names in Vivado don't matter, but the module name inside the code must match what the testbench instantiates.
 
 ## MCA — LPC2148 Keil C (`mca/`)
 

@@ -1,4 +1,11 @@
-`timescale 1ns/1ps
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : bin2gray
+// Project     : Practical 4: 4-bit Binary to Gray code converter
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Practical 4: 4-bit Binary to Gray code converter
 // g3 = b3, g2 = b3^b2, g1 = b2^b1, g0 = b1^b0
 module bin2gray (

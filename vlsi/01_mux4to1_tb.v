@@ -1,5 +1,12 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Engineer    : Sandesh Pakhare
+// Module Name : mux4to1_tb
+// Project     : Testbench: 4:1 Multiplexer
+// Tool        : Xilinx Vivado (behavioral simulation)
+//////////////////////////////////////////////////////////////////////////////////
+
 // Testbench: 4:1 Multiplexer
-`timescale 1ns/1ps
 module mux4to1_tb;
     reg  [3:0] i;
     reg  [1:0] s;
@@ -8,8 +15,6 @@ module mux4to1_tb;
     mux4to1 uut (.i(i), .s(s), .y(y));
 
     initial begin
-        $dumpfile("mux4to1.vcd");
-        $dumpvars(0, mux4to1_tb);
         $monitor("t=%0t  i=%b  s=%b  y=%b", $time, i, s, y);
 
         i = 4'b1010;
