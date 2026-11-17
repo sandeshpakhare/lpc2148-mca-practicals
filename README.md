@@ -6,7 +6,7 @@ Each practical has a design file and a `_tb.v` testbench. All were simulated and
 
 | Practical | Design | Testbench |
 | --- | --- | --- |
-| 1. 4:1 Multiplexer | `01_mux4to1.v` | `01_mux4to1_tb.v` |
+| 1. 4:1 Multiplexer (module `mux4_1`) | `01_mux4to1.v` | `01_mux4to1_tb.v` |
 | 2. Full adder using two half adders | `02_full_adder_using_ha.v` | `02_full_adder_using_ha_tb.v` |
 | 3. 4-bit ALU | `03_alu_4bit.v` | `03_alu_4bit_tb.v` |
 | 4. Binary to Gray converter | `04_binary_to_gray.v` | `04_binary_to_gray_tb.v` |

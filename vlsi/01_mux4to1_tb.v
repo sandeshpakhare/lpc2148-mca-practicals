@@ -1,32 +1,33 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Engineer    : Sandesh Pakhare
-// Module Name : mux4to1_tb
+// Module Name : mux4_1_tb
 // Project     : Testbench: 4:1 Multiplexer
 // Tool        : Xilinx Vivado (behavioral simulation)
 //////////////////////////////////////////////////////////////////////////////////
 
-// Testbench: 4:1 Multiplexer
-module mux4to1_tb;
-    reg  [3:0] i;
-    reg  [1:0] s;
-    wire       y;
+module mux4_1_tb;
+    reg w0, w1, w2, w3;
+    reg [1:0] S;
+    wire f;
 
-    mux4to1 uut (.i(i), .s(s), .y(y));
+    mux4_1 uut (.w0(w0), .w1(w1), .w2(w2), .w3(w3), .S(S), .f(f));
 
-    initial begin
-        $monitor("t=%0t  i=%b  s=%b  y=%b", $time, i, s, y);
+    initial
+    begin
+        $monitor("t=%0t  w3=%b w2=%b w1=%b w0=%b  S=%b  f=%b", $time, w3, w2, w1, w0, S, f);
 
-        i = 4'b1010;
-        s = 2'b00; #10;
-        s = 2'b01; #10;
-        s = 2'b10; #10;
-        s = 2'b11; #10;
-        i = 4'b0101;
-        s = 2'b00; #10;
-        s = 2'b01; #10;
-        s = 2'b10; #10;
-        s = 2'b11; #10;
+        w0 = 0; w1 = 1; w2 = 0; w3 = 1;
+        S = 2'b00; #10;
+        S = 2'b01; #10;
+        S = 2'b10; #10;
+        S = 2'b11; #10;
+
+        w0 = 1; w1 = 0; w2 = 1; w3 = 0;
+        S = 2'b00; #10;
+        S = 2'b01; #10;
+        S = 2'b10; #10;
+        S = 2'b11; #10;
         $finish;
     end
 endmodule
