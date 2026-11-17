@@ -2,45 +2,48 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Engineer    : Sandesh Pakhare
 // Module Name : jk_ff, t_ff
-// Project     : Practical 5: JK flip-flop and T flip-flop (positive edge, synchronous reset)
+// Project     : JK Flip-Flop and T Flip-Flop
 // Tool        : Xilinx Vivado (behavioral simulation)
 //////////////////////////////////////////////////////////////////////////////////
 
-// Practical 5: JK flip-flop and T flip-flop (positive edge, synchronous reset)
+// JK: 00 no change, 01 reset, 10 set, 11 toggle
+module jk_ff (clk, rst, J, K, Q, Qbar);
+    input clk, rst, J, K;
+    output reg Q;
+    output Qbar;
 
-// JK: 00 hold, 01 reset, 10 set, 11 toggle
-module jk_ff (
-    input      clk, rst, j, k,
-    output reg q,
-    output     qbar
-);
-    assign qbar = ~q;
-    always @(posedge clk) begin
-        if (rst)
-            q <= 1'b0;
+    assign Qbar = ~Q;
+
+    always @(posedge clk)
+    begin
+        if (rst == 1)
+            Q <= 0;
+        else if (J == 0 && K == 0)
+            Q <= Q;        // no change
+        else if (J == 0 && K == 1)
+            Q <= 0;        // reset
+        else if (J == 1 && K == 0)
+            Q <= 1;        // set
         else
-            case ({j, k})
-                2'b00: q <= q;      // no change
-                2'b01: q <= 1'b0;   // reset
-                2'b10: q <= 1'b1;   // set
-                2'b11: q <= ~q;     // toggle
-            endcase
+            Q <= ~Q;       // toggle
     end
 endmodule
 
-// T: 0 hold, 1 toggle
-module t_ff (
-    input      clk, rst, t,
-    output reg q,
-    output     qbar
-);
-    assign qbar = ~q;
-    always @(posedge clk) begin
-        if (rst)
-            q <= 1'b0;
-        else if (t)
-            q <= ~q;        // toggle
+// T: 0 no change, 1 toggle
+module t_ff (clk, rst, T, Q, Qbar);
+    input clk, rst, T;
+    output reg Q;
+    output Qbar;
+
+    assign Qbar = ~Q;
+
+    always @(posedge clk)
+    begin
+        if (rst == 1)
+            Q <= 0;
+        else if (T == 1)
+            Q <= ~Q;       // toggle
         else
-            q <= q;         // no change
+            Q <= Q;        // no change
     end
 endmodule

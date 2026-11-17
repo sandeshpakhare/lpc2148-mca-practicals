@@ -1,25 +1,24 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Engineer    : Sandesh Pakhare
-// Module Name : bin2gray_tb
-// Project     : Testbench: Binary to Gray converter (all 16 inputs)
+// Module Name : bin_to_gray_tb
+// Project     : Testbench: Binary to Gray Code Converter
 // Tool        : Xilinx Vivado (behavioral simulation)
 //////////////////////////////////////////////////////////////////////////////////
 
-// Testbench: Binary to Gray converter (all 16 inputs)
-module bin2gray_tb;
-    reg  [3:0] b;
-    wire [3:0] g;
-    integer k;
+module bin_to_gray_tb;
+    reg [3:0] B;
+    wire [3:0] G;
+    integer i;
 
-    bin2gray uut (.b(b), .g(g));
+    bin_to_gray uut (B, G);
 
-    initial begin
-        $display("Binary | Gray");
-        for (k = 0; k < 16; k = k + 1) begin
-            b = k;
-            #10;
-            $display(" %b  | %b", b, g);
+    initial
+    begin
+        $monitor("t=%0t  Binary=%b  Gray=%b", $time, B, G);
+        for (i = 0; i < 16; i = i + 1)
+        begin
+            B = i; #10;
         end
         $finish;
     end

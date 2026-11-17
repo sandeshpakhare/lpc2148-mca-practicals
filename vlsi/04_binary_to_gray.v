@@ -1,20 +1,18 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Engineer    : Sandesh Pakhare
-// Module Name : bin2gray
-// Project     : Practical 4: 4-bit Binary to Gray code converter
+// Module Name : bin_to_gray
+// Project     : Binary to Gray Code Converter
 // Tool        : Xilinx Vivado (behavioral simulation)
 //////////////////////////////////////////////////////////////////////////////////
 
-// Practical 4: 4-bit Binary to Gray code converter
-// g3 = b3, g2 = b3^b2, g1 = b2^b1, g0 = b1^b0
-module bin2gray (
-    input  [3:0] b,
-    output [3:0] g
-);
-    assign g[3] = b[3];
-    assign g[2] = b[3] ^ b[2];
-    assign g[1] = b[2] ^ b[1];
-    assign g[0] = b[1] ^ b[0];
-    // short form: assign g = b ^ (b >> 1);
+// G3 = B3, G2 = B3^B2, G1 = B2^B1, G0 = B1^B0
+module bin_to_gray (B, G);
+    input [3:0] B;
+    output [3:0] G;
+
+    assign G[3] = B[3];
+    assign G[2] = B[3] ^ B[2];
+    assign G[1] = B[2] ^ B[1];
+    assign G[0] = B[1] ^ B[0];
 endmodule

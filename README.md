@@ -2,7 +2,7 @@
 
 ## VLSI — Verilog design + testbench (`vlsi/`)
 
-Each practical has a design file and a `_tb.v` testbench. All were simulated and verified with Icarus Verilog.
+Each practical has a design file and a `_tb.v` testbench, written in the lab's style (port list, if-else). All were simulated and verified.
 
 | Practical | Design | Testbench |
 | --- | --- | --- |
